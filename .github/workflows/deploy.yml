@@ -27,6 +27,12 @@ jobs:
       - name: Build
         run: pnpm turbo build
 
+      - name: Create Cloudflare Pages project (no-op if exists)
+        run: pnpm wrangler pages project create gitrun || true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
       - name: Deploy to Cloudflare Pages
         run: pnpm wrangler pages deploy packages/web/dist --project-name=gitrun --branch=main
         env:
