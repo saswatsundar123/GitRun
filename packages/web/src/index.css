@@ -1,0 +1,11 @@
+/* Tailwind CSS v4 — single import replaces the v3 directives */
+@import "tailwindcss";
+
+/* Design tokens — extended in Phase 5 */
+@theme {
+  --color-brand: oklch(62% 0.2 145);        /* GitRun green */
+  --color-brand-dark: oklch(52% 0.2 145);
+  --color-surface: oklch(14% 0.01 260);     /* dark bg */
+  --color-surface-2: oklch(18% 0.01 260);  /* slightly lighter card */
+  --color-muted: oklch(55% 0.01 260);
+}

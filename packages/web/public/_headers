@@ -1,0 +1,12 @@
+# Cloudflare Pages static headers
+#
+# These two headers together enable crossOriginIsolated = true in the browser.
+# Hard requirement for @webcontainer/api (WebContainers) and Pyodide SABs.
+# Mirrors what the Vite dev server sends via vite.config.ts server.headers.
+#
+# Ref: https://developer.chrome.com/blog/enabling-shared-array-buffer/
+
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+
